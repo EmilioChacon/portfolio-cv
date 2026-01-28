@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilio Chacón | Backend Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Emilio Chacón</h1>
+            <p class="subtitle">Estudiante de DAM | Backend Developer</p>
+            <nav>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </header>
+
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>Enfoque en lógica de programación, estructuras de datos y desarrollo de sistemas escalables con <strong>Java</strong> y <strong>Python</strong>.</p>
+        </section>
+
+        <section id="experiencia">
+            <h2>Formación y Skills</h2>
+            <div class="item">
+                <h3>Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                <span>En curso | España</span>
+            </div>
+            <div class="skills">
+                <span>Java</span> <span>Python</span> <span>Git</span> <span>Linux (Fedora)</span>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form name="cv-contacto" method="POST" netlify>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Tu email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
