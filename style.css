@@ -1,14 +1,19 @@
 :root {
+    /* Colores (Dracula inspired) */
     --bg: #1a1a1a;           /* Fondo oscuro estilo terminal */
     --text: #e0e0e0;         /* Gris claro para lectura descansada */
-    --accent: #50fa7b;       /* Verde neón para enlaces y botones (Dracula style) */
+    --accent: #50fa7b;       /* Verde neón para enlaces y botones */
     --secondary: #6272a4;    /* Azul grisáceo para subtítulos */
     --border-line: #44475a;  /* Color de bordes y líneas */
     --gray-bg: #282a36;      /* Fondo de bloques y tags */
+
+    /* Tipografía */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-code: 'Fira Code', monospace;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-primary);
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -45,6 +50,7 @@ nav a {
     text-decoration: none; 
     font-size: 0.9rem;
     border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s ease;
 }
 
 nav a:hover { border-bottom: 1px solid var(--accent); }
@@ -57,15 +63,40 @@ h2 {
     margin-top: 2.5rem; 
 }
 
-.skills span {
+/* Estilos para las etiquetas de habilidades (Skills) */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive Grid */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.skill-tag {
+    background: var(--gray-bg);
+    color: var(--accent);
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-family: var(--font-code);
+    border: 1px solid var(--border-line);
+    transition: background 0.2s;
+}
+
+.skill-tag:hover {
+    background: var(--border-line);
+}
+
+/* Estilos antiguos de skills que ya no se usan directamente, pero se mantienen por si acaso */
+/* .skills span {
     background: var(--gray-bg);
     color: var(--accent);
     padding: 0.4rem 0.7rem;
     border-radius: 4px;
     font-size: 0.85rem;
     margin-right: 0.6rem;
-    font-family: 'Fira Code', monospace; /* Toque backend */
-}
+    font-family: var(--font-code);
+} */
 
 /* Formulario optimizado para Netlify */
 form { 
@@ -102,8 +133,19 @@ input:focus, textarea:focus {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    transition: filter 0.2s;
 }
 
 .btn:hover {
     filter: brightness(1.1);
+}
+
+/* Footer (Nuevo elemento semántico) */
+footer {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-line);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--secondary);
 }
