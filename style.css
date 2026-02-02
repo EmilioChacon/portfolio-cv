@@ -1,5 +1,5 @@
 :root {
-    /* Colores (Minimalista Boluda Style) */
+    /* Colores (Minimalista Boluda Style - Light Mode Default) */
     --bg: #f7f7f7;           /* Fondo claro minimalista */
     --text: #333333;         /* Texto oscuro */
     --accent: #4a864a;       /* Verde hoja oscuro (Distintivo) */
@@ -10,6 +10,15 @@
     /* Tipografía */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-code: 'Fira Code', monospace;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+    --bg: #1a1a1a;
+    --text: #e0e0e0;
+    --secondary: #999999;
+    --border-line: #44475a;
+    --gray-bg: #282a36;
 }
 
 body {
@@ -138,6 +147,23 @@ input:focus, textarea:focus {
 
 .btn:hover {
     filter: brightness(1.1);
+}
+
+/* Theme Toggle Button Style */
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-line);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem; /* Separación de la navegación */
+    transition: background 0.2s, color 0.2s;
+}
+
+#theme-toggle:hover {
+    background: var(--border-line);
 }
 
 /* Footer (Nuevo elemento semántico) */
