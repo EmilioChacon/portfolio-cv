@@ -96,6 +96,40 @@ h2 {
     background: var(--border-line);
 }
 
+/* Estilos para la lista de proyectos */
+.project-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-line);
+    border-radius: 6px;
+    background: var(--gray-bg);
+}
+
+.project-item h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.project-item h3 a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.project-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.project-item p {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    margin-bottom: 0;
+}
+
+
 /* Estilos antiguos de skills que ya no se usan directamente, pero se mantienen por si acaso */
 /* .skills span {
     background: var(--gray-bg);
@@ -174,4 +208,15 @@ footer {
     text-align: center;
     font-size: 0.85rem;
     color: var(--secondary);
+}
+
+.social-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
 }
