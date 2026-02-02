@@ -1,11 +1,11 @@
 :root {
-    /* Colores (Dracula inspired) */
-    --bg: #1a1a1a;           /* Fondo oscuro estilo terminal */
-    --text: #e0e0e0;         /* Gris claro para lectura descansada */
-    --accent: #50fa7b;       /* Verde neón para enlaces y botones */
-    --secondary: #6272a4;    /* Azul grisáceo para subtítulos */
-    --border-line: #44475a;  /* Color de bordes y líneas */
-    --gray-bg: #282a36;      /* Fondo de bloques y tags */
+    /* Colores (Minimalista Boluda Style) */
+    --bg: #f7f7f7;           /* Fondo claro minimalista */
+    --text: #333333;         /* Texto oscuro */
+    --accent: #4a864a;       /* Verde hoja oscuro (Distintivo) */
+    --secondary: #666666;    /* Gris medio para subtítulos */
+    --border-line: #dddddd;  /* Líneas y bordes sutiles */
+    --gray-bg: #ffffff;      /* Fondo de bloques y tags (blanco puro) */
 
     /* Tipografía */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -125,7 +125,7 @@ input:focus, textarea:focus {
 
 .btn {
     background: var(--accent);
-    color: var(--bg);
+    color: #ffffff; /* Texto blanco para alto contraste sobre el verde oscuro */
     padding: 0.9rem;
     border: none;
     border-radius: 4px;
