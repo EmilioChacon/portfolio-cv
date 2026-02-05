@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-icon');
     const body = document.body;
     const currentTheme = localStorage.getItem('theme');
 
@@ -7,10 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyTheme = (theme) => {
         if (theme === 'dark') {
             body.classList.add('dark-mode');
-            toggle.textContent = 'Modo Claro';
+            icon.innerHTML = '&#9728;'; // Icono de Sol (para cambiar a Claro)
+            toggle.setAttribute('aria-label', 'Activar modo claro');
         } else {
             body.classList.remove('dark-mode');
-            toggle.textContent = 'Modo Oscuro';
+            icon.innerHTML = '&#9790;'; // Icono de Luna (para cambiar a Oscuro)
+            toggle.setAttribute('aria-label', 'Activar modo oscuro');
         }
     };
 

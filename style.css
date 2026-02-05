@@ -190,20 +190,30 @@ input:focus, textarea:focus {
     top: 0;
     right: 0;
     
+    /* Estilos para hacerlo un botón de icono */
     background: none;
-    border: none; /* Más discreto */
+    border: 1px solid var(--border-line); /* Añadir un borde sutil */
     color: var(--secondary); 
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
+    width: 40px; /* Tamaño fijo */
+    height: 40px; /* Tamaño fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Circular */
     cursor: pointer;
-    font-size: 0.85rem;
     margin-top: 0; 
-    transition: color 0.2s;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 #theme-toggle:hover {
-    background: none;
+    background: var(--border-line);
     color: var(--accent);
+    border-color: var(--accent);
+}
+
+#theme-icon {
+    font-size: 1.2rem; /* Tamaño del icono */
+    line-height: 1;
 }
 
 /* Footer (Nuevo elemento semántico) */
@@ -241,5 +251,11 @@ footer {
     .skills-grid {
         /* Asegurar que las etiquetas de habilidades se ajusten bien en pantallas pequeñas */
         grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+    
+    /* Ajustar la posición del botón en móvil si es necesario */
+    #theme-toggle {
+        width: 35px;
+        height: 35px;
     }
 }
