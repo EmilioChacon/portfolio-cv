@@ -37,6 +37,7 @@ body {
 
 header {
     margin-bottom: 3rem;
+    position: relative; /* Añadido para posicionar el botón de tema */
 }
 
 h1 { 
@@ -185,19 +186,24 @@ input:focus, textarea:focus {
 
 /* Theme Toggle Button Style */
 #theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
     background: none;
-    border: 1px solid var(--border-line);
-    color: var(--text);
-    padding: 0.5rem 1rem;
+    border: none; /* Más discreto */
+    color: var(--secondary); 
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.9rem;
-    margin-top: 1rem; /* Separación de la navegación */
-    transition: background 0.2s, color 0.2s;
+    font-size: 0.85rem;
+    margin-top: 0; 
+    transition: color 0.2s;
 }
 
 #theme-toggle:hover {
-    background: var(--border-line);
+    background: none;
+    color: var(--accent);
 }
 
 /* Footer (Nuevo elemento semántico) */
