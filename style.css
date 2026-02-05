@@ -16,6 +16,7 @@
 body.dark-mode {
     --bg: #1a1a1a;
     --text: #e0e0e0;
+    --accent: #76c776; /* Verde más claro para mejor contraste en modo oscuro */
     --secondary: #999999;
     --border-line: #44475a;
     --gray-bg: #282a36;
@@ -64,6 +65,17 @@ nav a {
 }
 
 nav a:hover { border-bottom: 1px solid var(--accent); }
+
+/* Estilo general para enlaces de contenido (como en la sección Contacto o Sobre mí) */
+a {
+    color: var(--accent); /* Usar el color de acento para todos los enlaces */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 h2 { 
     font-size: 1.4rem; 
