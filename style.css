@@ -220,3 +220,20 @@ footer {
 .social-links a:hover {
     color: var(--accent);
 }
+
+/* --- Mobile Optimization --- */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h1 {
+        /* Reducir el tamaño de la fuente para evitar saltos de línea incómodos y espaciado excesivo */
+        font-size: 2.2rem; 
+    }
+    
+    .skills-grid {
+        /* Asegurar que las etiquetas de habilidades se ajusten bien en pantallas pequeñas */
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+}
