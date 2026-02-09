@@ -1,5 +1,5 @@
 :root {
-    /* Colores (Minimalista Boluda Style - Light Mode Default) */
+    /* Colores (Minimalista - Light Mode Default) */
     --bg: #f7f7f7;           /* Fondo claro minimalista */
     --text: #333333;         /* Texto oscuro */
     --accent: #4a864a;       /* Verde hoja oscuro (Distintivo) */
@@ -203,6 +203,7 @@ input, textarea {
     border-radius: 4px;
     color: var(--text);
     font-family: inherit;
+    box-sizing: border-box;
 }
 
 input:focus, textarea:focus {
