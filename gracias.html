@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! | Emilio De La Peña Chacón</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Emilio De La Peña Chacón</h1>
+            <p class="subtitle">Backend Developer | Estudiante de DAM</p>
+            <nav>
+                <a href="index.html#sobre-mi">Sobre mí</a>
+                <a href="index.html#proyectos">Proyectos</a>
+                <a href="index.html#habilidades">Habilidades</a>
+                <a href="index.html#formacion">Formación</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Alternar modo oscuro/claro">
+                <span id="theme-icon">&#9790;</span> <!-- Icono de Luna (Modo Oscuro) -->
+            </button>
+        </header>
+
+        <section id="gracias" style="text-align: center; margin-top: 4rem;">
+            <div style="background: var(--gray-bg); padding: 3rem; border-radius: 8px; border: 1px solid var(--border-line);">
+                <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+                <h2 style="border-bottom: none; margin-top: 0;">¡Mensaje enviado con éxito!</h2>
+                <p>Gracias por contactar conmigo. He recibido tu formulario correctamente y te responderé con la mayor brevedad posible.</p>
+                
+                <div style="margin-top: 3rem;">
+                    <p style="color: var(--secondary); font-size: 0.95rem; margin-bottom: 2rem;">
+                        Mientras respondo a tu mensaje, te invito a conectar en LinkedIn y a seguir mis proyectos en GitHub.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://www.linkedin.com/in/emilio-dlp-chacon/" target="_blank" class="btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; background: #0077b5;">
+                            <i class="fab fa-linkedin"></i> Conectar en LinkedIn
+                        </a>
+                        <a href="https://github.com/EmilioChacon" target="_blank" class="btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; background: #333;">
+                            <i class="fab fa-github"></i> Seguir en GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2.5rem;">
+                    <a href="index.html" style="font-size: 0.9rem; color: var(--secondary); text-decoration: none; border-bottom: 1px solid var(--border-line); padding-bottom: 2px;">
+                        <i class="fas fa-arrow-left"></i> Volver al inicio
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emilio De La Peña Chacón</p>
+        <div class="social-links">
+            <a href="https://github.com/EmilioChacon" target="_blank">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/emilio-dlp-chacon/" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+    <script src="theme.js"></script>
+</body>
+</html>
