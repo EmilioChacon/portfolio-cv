@@ -1,11 +1,13 @@
 :root {
     /* Colores (Minimalista - Light Mode Default) */
     --bg: #f7f7f7;           /* Fondo claro minimalista */
+    --bg-rgb: 247, 247, 247;
     --text: #333333;         /* Texto oscuro */
     --accent: #4a864a;       /* Verde hoja oscuro (Distintivo) */
     --secondary: #666666;    /* Gris medio para subtítulos */
     --border-line: #dddddd;  /* Líneas y bordes sutiles */
     --gray-bg: #ffffff;      /* Fondo de bloques y tags (blanco puro) */
+    --gray-bg-rgb: 255, 255, 255;
 
     /* Tipografía */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -13,13 +15,20 @@
 }
 
 /* Dark Mode Overrides */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem; /* Evita que el header sticky tape el contenido al navegar */
+}
+
 body.dark-mode {
     --bg: #1a1a1a;
+    --bg-rgb: 26, 26, 26;
     --text: #e0e0e0;
     --accent: #76c776; /* Verde más claro para mejor contraste en modo oscuro */
     --secondary: #999999;
     --border-line: #44475a;
     --gray-bg: #282a36;
+    --gray-bg-rgb: 40, 42, 54;
 }
 
 body {
@@ -38,7 +47,50 @@ body {
 
 header {
     margin-bottom: 3rem;
-    position: relative; /* Añadido para posicionar el botón de tema */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    background-color: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+header.scrolled {
+    background-color: rgba(var(--bg-rgb), 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 3rem; /* Mantener el espacio original */
+    border-bottom: 1px solid var(--border-line);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-left: -1.5rem; /* Extender un poco visualmente si es necesario, o mantener contenido */
+    margin-right: -1.5rem;
+    width: calc(100% + 3rem); /* Compensar margen negativo */
+}
+
+/* Estado contraído para el header */
+header.scrolled h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+header.scrolled .subtitle {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+header.scrolled nav {
+    margin-top: 0.5rem;
+}
+
+/* Ajuste de controles en modo scrolled */
+header.scrolled .header-controls {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5rem;
 }
 
 h1 { 
@@ -228,13 +280,20 @@ input:focus, textarea:focus {
     filter: brightness(1.1);
 }
 
-/* Theme Toggle Button Style */
-#theme-toggle {
+/* Header Controls Container */
+.header-controls {
     position: absolute;
     top: 0;
     right: 0;
-    
-    /* Estilos para hacerlo un botón de icono */
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Theme Toggle, Menu Button & Language Toggle Style */
+#theme-toggle, #menu-toggle, #lang-toggle {
+    position: static; /* Positioned by flex container */
     background: none;
     border: 1px solid var(--border-line); /* Añadir un borde sutil */
     color: var(--secondary); 
@@ -245,19 +304,34 @@ input:focus, textarea:focus {
     justify-content: center;
     border-radius: 50%; /* Circular */
     cursor: pointer;
-    margin-top: 0; 
     transition: background 0.2s, color 0.2s, border-color 0.2s;
+    padding: 0;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover, #menu-toggle:hover, #lang-toggle:hover {
     background: var(--border-line);
     color: var(--accent);
     border-color: var(--accent);
 }
 
-#theme-icon {
+#menu-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.2rem;
+}
+
+#close-menu {
+    display: none;
+}
+
+#theme-icon, #menu-icon, #lang-current {
     font-size: 1.2rem; /* Tamaño del icono */
     line-height: 1;
+}
+
+#lang-current {
+    font-size: 0.9rem; /* Un poco más pequeño para texto */
+    font-weight: 700;
+    font-family: var(--font-code);
 }
 
 /* Footer (Nuevo elemento semántico) */
@@ -283,13 +357,40 @@ footer {
 
 /* --- Mobile Optimization --- */
 @media (max-width: 600px) {
+    html {
+        scroll-padding-top: 9rem; /* Aumentado para evitar solapamiento en móviles */
+    }
+
     body {
         padding: 1rem;
     }
     
+    header {
+        /* Asegurar que el header ocupe el ancho correcto y no cause desbordamiento */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    header.scrolled {
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-right: 4rem; /* Espacio para controles */
+    }
+
+    header.scrolled h1 {
+        font-size: 1.2rem; /* Reducir aún más en mobile sticky para evitar saltos de línea */
+    }
+
     h1 {
-        /* Reducir el tamaño de la fuente para evitar saltos de línea incómodos y espaciado excesivo */
-        font-size: 2.2rem; 
+        /* Reducir el tamaño de la fuente para evitar saltos de línea incómodos */
+        font-size: 1.8rem; 
+        max-width: 75%; /* Evitar solapamiento con botones */
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        max-width: 75%;
     }
     
     .skills-grid {
@@ -297,9 +398,55 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     }
     
-    /* Ajustar la posición del botón en móvil si es necesario */
-    #theme-toggle {
-        width: 35px;
-        height: 35px;
+    /* Mobile Menu Styles */
+    #menu-toggle {
+        display: flex;
+    }
+
+    nav#main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg);
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s;
+        visibility: hidden;
+        margin-top: 0;
+        /* Asegurar contraste en modo oscuro/claro */
+        backdrop-filter: blur(10px);
+    }
+
+    nav#main-nav.nav-open {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+
+    nav#main-nav a {
+        font-size: 1.5rem;
+        margin: 1.2rem 0;
+        display: block;
+    }
+
+    #close-menu {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 2.5rem;
+        color: var(--text);
+        cursor: pointer;
+        padding: 0.5rem;
+        line-height: 1;
     }
 }

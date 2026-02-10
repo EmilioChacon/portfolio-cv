@@ -1,158 +1,169 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emilio De La Peña Chacón | Backend Developer</title>
+    <title data-i18n="meta_title">Emilio De La Peña Chacón | Backend Developer</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <main class="container">
         <header>
             <h1>Emilio De La Peña Chacón</h1>
-            <p class="subtitle">Backend Developer | Estudiante de DAM</p>
-            <nav>
-                <a href="#sobre-mi">Sobre mí</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#habilidades">Habilidades</a>
-                <a href="#formacion">Formación</a>
-                <a href="#contacto">Contacto</a>
+            <p class="subtitle" data-i18n="subtitle">Backend Developer | DAM Student</p>
+            <nav id="main-nav">
+                <button id="close-menu" aria-label="Close menu" data-i18n-aria="aria_close_menu">&times;</button>
+                <a href="#sobre-mi" data-i18n="nav_about">About Me</a>
+                <a href="#proyectos" data-i18n="nav_projects">Projects</a>
+                <a href="#habilidades" data-i18n="nav_skills">Skills</a>
+                <a href="#formacion" data-i18n="nav_education">Education</a>
+                <a href="#contacto" data-i18n="nav_contact">Contact</a>
             </nav>
-            <button id="theme-toggle" aria-label="Alternar modo oscuro/claro">
-                <span id="theme-icon">&#9790;</span> <!-- Icono de Luna (Modo Oscuro) -->
-            </button>
+            <div class="header-controls">
+                <button id="lang-toggle" aria-label="Switch to Spanish" data-i18n-aria="aria_lang_toggle">
+                    <span id="lang-current">EN</span>
+                </button>
+                <button id="theme-toggle" aria-label="Switch to dark mode" data-i18n-aria="aria_theme_toggle_dark">
+                    <span id="theme-icon">&#9790;</span> <!-- Icono de Luna (Modo Oscuro) -->
+                </button>
+                <button id="menu-toggle" aria-label="Open menu" data-i18n-aria="aria_menu_toggle">
+                    <span id="menu-icon">&#9776;</span>
+                </button>
+            </div>
         </header>
 
         <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Desarrollador Backend con foco en el rigor técnico y la eficiencia de procesos.</p>
-            <p>Mi aproximación al desarrollo de software se resume en una palabra: Rigor. No me conformo con que el código funcione; me obsesiona que el resultado final sea excelente, desde la limpieza de la lógica interna hasta el deleite del usuario que interactúa con el servicio. Esta seriedad técnica se alimenta de una curiosidad constante que me impulsa a explorar nuevas herramientas y a entender el "porqué" de cada solución.</p>
+            <h2 data-i18n="about_title">About Me</h2>
+            <p data-i18n="about_p1">Backend Developer focused on technical rigour and process efficiency.</p>
+            <p data-i18n="about_p2">My approach to software development can be summed up in one word: Rigour. I am not satisfied with code that simply works; I am obsessed with excellence in the final result, from the cleanliness of the internal logic to the delight of the user interacting with the service. This technical seriousness is fuelled by a constant curiosity that drives me to explore new tools and understand the "why" behind every solution.</p>
             
-            <h3>¿Qué aporto al equipo?</h3>
+            <h3 data-i18n="about_q_title">What do I bring to the team?</h3>
             
-            <p><strong>Resolución técnica con criterio:</strong> Me siento especialmente cómodo enfrentando problemas complejos de lógica y bugs que requieren profundidad técnica y persistencia.</p>
+            <p data-i18n="about_q_p1"><strong>Technical resolution with judgement:</strong> I feel especially comfortable facing complex logic problems and bugs that require technical depth and persistence.</p>
             
-            <p><strong>Colaboración Proactiva:</strong> Mi experiencia coordinando equipos en asociaciones nacionales y gestionando operativa bajo presión en el aeropuerto me ha convertido en un miembro de equipo confiable. Sé escuchar, aportar soluciones y estar disponible para que el proyecto avance con fluidez.</p>
+            <p data-i18n="about_q_p2"><strong>Proactive Collaboration:</strong> My experience coordinating teams in national associations and managing operations under pressure at the airport has turned me into a reliable team member. I know how to listen, provide solutions, and be available to ensure the project flows smoothly.</p>
             
-            <p><strong>Mentalidad de Producto:</strong> Gracias a mi recorrido previo, entiendo que el software es una herramienta para resolver problemas reales. Diseño pensando en la mantenibilidad y en el valor que el cliente final recibirá.</p>
+            <p data-i18n="about_q_p3"><strong>Product Mindset:</strong> Thanks to my previous background, I understand that software is a tool to solve real problems. I design with maintainability and the value the end client will receive in mind.</p>
             
-            <p>Actualmente especializado en el ecosistema Java, busco aportar esta combinación de capacidad técnica y habilidades de gestión en proyectos que valoren la calidad y la escalabilidad.</p>
+            <p data-i18n="about_conclusion">Currently specialised in the Java ecosystem, I seek to contribute this combination of technical capacity and management skills in projects that value quality and scalability.</p>
         </section>
 
         <!-- Nueva Sección: Proyectos -->
         <section id="proyectos">
-            <h2>Proyectos Destacados</h2>
+            <h2 data-i18n="projects_title">Featured Projects</h2>
             <div class="project-list">
                 <div class="project-item">
                     <h3><a href="https://github.com/EmilioChacon/zookeeper" target="_blank">Zookeeper</a> (Java)</h3>
-                    <p>Aplicación de consola que simula un sistema de monitoreo de cámaras de un zoológico, utilizando bloques de texto de Java para renderizar animaciones complejas de arte ASCII.</p>
+                    <p data-i18n="project_zookeeper_desc">Console application simulating a zoo camera monitoring system, utilising Java text blocks to render complex ASCII art animations.</p>
                 </div>
                 <div class="project-item">
                     <h3><a href="https://github.com/EmilioChacon/battleship-pvp-game" target="_blank">Battleship Game (PvP)</a> (Java)</h3>
-                    <p>Implementación clásica en línea de comandos del juego Battleship, enfocada en lógica backend y manipulación de arrays 2D.</p>
+                    <p data-i18n="project_battleship_desc">Classic command-line implementation of the Battleship game, focused on backend logic and 2D array manipulation.</p>
                 </div>
                 <div class="project-item">
                     <h3><a href="https://github.com/EmilioChacon/aerotaxi-web" target="_blank">Aerotaxi Web Simulation</a> (Python)</h3>
-                    <p>Simulación de reserva de un aerotaxi para viajes dentro de España en menos de 2 horas.</p>
+                    <p data-i18n="project_aerotaxi_desc">Aerotaxi reservation simulation for trips within Spain in under 2 hours.</p>
                 </div>
                 <div class="project-item">
                     <h3><a href="https://github.com/EmilioChacon/Cinema-Room-Manager" target="_blank">Cinema Room Manager</a> (Java)</h3>
-                    <p>Aplicación de consola para gestionar la disposición de asientos de cine, compra de entradas y estadísticas de ocupación e ingresos.</p>
+                    <p data-i18n="project_cinema_desc">Console application to manage cinema seating arrangements, ticket purchases, and occupancy/revenue statistics.</p>
                 </div>
                 <div class="project-item">
                     <h3><a href="https://github.com/EmilioChacon/Simple-Shop-Net-Income-Calculator" target="_blank">Shop Net Income Calculator</a> (Java)</h3>
-                    <p>Aplicación de consola simple para rastrear ganancias de una tienda, registrar gastos y calcular el ingreso neto.</p>
+                    <p data-i18n="project_shop_desc">Simple console application to track shop earnings, record expenses, and calculate net income.</p>
                 </div>
             </div>
         </section>
 
         <!-- Sección de Habilidades -->
         <section id="habilidades">
-            <h2>Habilidades</h2>
+            <h2 data-i18n="skills_title">Skills</h2>
             
             <div class="skills-category">
-                <h3>Core Backend y Ecosistema</h3>
+                <h3 data-i18n="skills_cat1">Core Backend & Ecosystem</h3>
                 <ul>
-                    <li><strong>Java (Spring Boot):</strong> Desarrollo de servicios backend robustos y escalables utilizando el ecosistema Spring.</li>
-                    <li><strong>Gestión de Proyectos:</strong> Automatización y construcción con Maven y Gradle.</li>
-                    <li><strong>Persistencia de Datos:</strong> Implementación eficiente mediante JPA / Hibernate y PostgreSQL.</li>
-                    <li><strong>Lenguajes de Marcado:</strong> Manejo de XML para configuraciones y transferencia de datos.</li>
+                    <li data-i18n="skills_cat1_li1"><strong>Java (Spring Boot):</strong> Development of robust and scalable backend services utilising the Spring ecosystem.</li>
+                    <li data-i18n="skills_cat1_li2"><strong>Project Management:</strong> Automation and build with Maven and Gradle.</li>
+                    <li data-i18n="skills_cat1_li3"><strong>Data Persistence:</strong> Efficient implementation via JPA / Hibernate and PostgreSQL.</li>
+                    <li data-i18n="skills_cat1_li4"><strong>Markup Languages:</strong> Handling XML for configurations and data transfer.</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3>Arquitectura y Calidad de Código</h3>
+                <h3 data-i18n="skills_cat2">Architecture & Code Quality</h3>
                 <ul>
-                    <li><strong>Principios de Ingeniería:</strong> Aplicación de SOLID y Clean Code para garantizar código mantenible y legible.</li>
-                    <li><strong>Testing & QA:</strong> Garantía de calidad mediante pruebas unitarias con JUnit y simulación de dependencias con Mockito.</li>
-                    <li><strong>Diseño de Sistemas:</strong> Diseño de RESTful APIs bajo estándares HTTP y conocimiento en Patrones de Diseño (Singleton, Factory) y Microservicios.</li>
+                    <li data-i18n="skills_cat2_li1"><strong>Engineering Principles:</strong> Application of SOLID and Clean Code to ensure maintainable and readable code.</li>
+                    <li data-i18n="skills_cat2_li2"><strong>Testing & QA:</strong> Quality assurance via unit tests with JUnit and dependency simulation with Mockito.</li>
+                    <li data-i18n="skills_cat2_li3"><strong>System Design:</strong> Design of RESTful APIs under HTTP standards and knowledge of Design Patterns (Singleton, Factory) and Microservices.</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3>Infraestructura, DevOps y Metodologías</h3>
+                <h3 data-i18n="skills_cat3">Infrastructure, DevOps & Methodologies</h3>
                 <ul>
-                    <li><strong>Control de Versiones:</strong> Dominio de Git Flow en GitHub para una gestión profesional del ciclo de vida del software.</li>
-                    <li><strong>Sistemas y Despliegue:</strong> Experiencia en entornos Linux (Fedora) y contenedorización con Docker.</li>
-                    <li><strong>Metodologías Ágiles:</strong> Trabajo bajo marcos Scrum y Kanban enfocado a la entrega de valor continua.</li>
+                    <li data-i18n="skills_cat3_li1"><strong>Version Control:</strong> Mastery of Git Flow on GitHub for professional software lifecycle management.</li>
+                    <li data-i18n="skills_cat3_li2"><strong>Systems & Deployment:</strong> Experience in Linux environments (Fedora) and containerisation with Docker.</li>
+                    <li data-i18n="skills_cat3_li3"><strong>Agile Methodologies:</strong> Working under Scrum and Kanban frameworks focused on continuous value delivery.</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3>Frontend</h3>
+                <h3 data-i18n="skills_cat4">Frontend</h3>
                 <ul>
-                    <li><strong>Web Fundamentals:</strong> Creación de interfaces funcionales con HTML, CSS y JavaScript.</li>
+                    <li data-i18n="skills_cat4_li1"><strong>Web Fundamentals:</strong> Creation of functional interfaces with HTML, CSS, and JavaScript.</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3>Inteligencia Artificial</h3>
+                <h3 data-i18n="skills_cat5">Artificial Intelligence</h3>
                 <ul>
-                    <li><strong>Productividad con IA:</strong> Desarrollo con capacidades aumentadas mediante Aider e IDEs integrados (IA-driven development) para optimizar tiempos de entrega.</li>
+                    <li data-i18n="skills_cat5_li1"><strong>Productivity with AI:</strong> Development with augmented capabilities via Aider and integrated IDEs (AI-driven development) to optimise delivery times.</li>
                 </ul>
             </div>
         </section>
 
         <section id="formacion">
-            <h2>Formación</h2>
+            <h2 data-i18n="edu_title">Education</h2>
             <div class="item">
-                <h3>Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
-                <span>En curso | España</span>
+                <h3 data-i18n="edu_dam">Multi-platform Application Development (DAM)</h3>
+                <span data-i18n="edu_status">In progress | Spain</span>
             </div>
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
+            <h2 data-i18n="contact_title">Contact</h2>
             <form name="contacto" method="POST" action="gracias.html" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contacto">
                 <p hidden>
-                    <label>Si eres humano, deja este campo vacío: <input name="bot-field" /></label>
+                    <label>If you are human, leave this field empty: <input name="bot-field" /></label>
                 </p>
 
-                <label for="nombre">Nombre completo</label>
+                <label for="nombre" data-i18n="contact_name_label">Full Name</label>
                 <input type="text" id="nombre" name="nombre" required>
 
-                <label for="email">Email de contacto</label>
+                <label for="email" data-i18n="contact_email_label">Contact Email</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="empresa">Empresa (Opcional)</label>
+                <label for="empresa" data-i18n="contact_company_label">Company (Optional)</label>
                 <input type="text" id="empresa" name="empresa">
 
-                <label for="mensaje">Mensaje</label>
+                <label for="mensaje" data-i18n="contact_message_label">Message</label>
                 <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
 
-                <button type="submit" class="btn">Enviar</button>
+                <button type="submit" class="btn" data-i18n="btn_send">Send</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Emilio De La Peña Chacón</p>
+        <p data-i18n="footer_copy">&copy; 2026 Emilio De La Peña Chacón</p>
         <div class="social-links">
-            <a href="https://github.com/EmilioChacon" target="_blank">GitHub</a> | 
-            <a href="https://www.linkedin.com/in/emilio-dlp-chacon/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/EmilioChacon" target="_blank" data-i18n="footer_github">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/emilio-dlp-chacon/" target="_blank" data-i18n="footer_linkedin">LinkedIn</a>
         </div>
     </footer>
+    <script src="assets/js/lang.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
 </html>
