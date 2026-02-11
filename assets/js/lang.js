@@ -1,3 +1,13 @@
+/**
+ * Localization Data
+ * 
+ * Purpose: Contains the dictionary of translation strings for supported languages (en-GB, es-ES).
+ *          Used by the I18nManager to populate the UI.
+ * 
+ * Dependencies: None
+ * 
+ * Author: Emilio De La Peña Chacón
+ */
 const translations = {
     "en-GB": {
         "meta_title": "Emilio De La Peña Chacón | Backend Developer",
