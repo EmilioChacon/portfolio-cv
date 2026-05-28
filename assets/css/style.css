@@ -368,7 +368,7 @@ footer {
 /* --- Mobile Optimization --- */
 @media (max-width: 600px) {
     html {
-        scroll-padding-top: 9rem; /* Aumentado para evitar solapamiento en móviles */
+        scroll-padding-top: 12rem; /* Aumentado para el nuevo alto del header */
     }
 
     body {
@@ -376,7 +376,11 @@ footer {
     }
     
     header {
-        /* Asegurar que el header ocupe el ancho correcto y no cause desbordamiento */
+        /* Layout de columna para móvil */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         width: 100%;
         box-sizing: border-box;
     }
@@ -385,26 +389,45 @@ footer {
         width: calc(100% + 2rem);
         margin-left: -1rem;
         margin-right: -1rem;
-        padding-right: 4rem; /* Espacio para controles */
+        padding: 1rem 1.5rem; /* Aumentar padding vertical en modo scrolled */
     }
 
     header.scrolled h1 {
-        font-size: 1.2rem; /* Reducir aún más en mobile sticky para evitar saltos de línea */
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem; /* Espacio entre título y subtítulo en modo scrolled */
+    }
+
+    /* En móvil, el subtítulo no desaparece al hacer scroll */
+    header.scrolled .subtitle {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+        font-size: 0.8rem; /* Un poco más pequeño en modo scrolled */
+    }
+
+    /* Ocultar la navegación principal en modo scrolled móvil, ya que está el menú hamburguesa */
+    header.scrolled nav {
+        display: none;
     }
 
     h1 {
-        /* Reducir el tamaño de la fuente para evitar saltos de línea incómodos */
-        font-size: 1.8rem; 
-        max-width: 75%; /* Evitar solapamiento con botones */
+        font-size: 1.8rem;
+        max-width: 100%;
+        margin-bottom: 0.5rem; /* Más espacio entre título y subtítulo */
     }
     
     .subtitle {
         font-size: 0.9rem;
-        max-width: 75%;
+        max-width: 100%;
+    }
+
+    /* Reposicionar los controles en el flujo normal */
+    .header-controls {
+        position: static;
+        margin-top: 1.5rem; /* Más espacio entre subtítulo y botones */
     }
     
     .skills-grid {
-        /* Asegurar que las etiquetas de habilidades se ajusten bien en pantallas pequeñas */
         grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     }
     
@@ -419,7 +442,9 @@ footer {
         left: 0;
         width: 100%;
         height: 100vh;
-        background: var(--bg);
+        background: rgba(var(--bg-rgb), 0.9); /* Fondo con transparencia */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         z-index: 2000;
         display: flex;
         flex-direction: column;
@@ -427,11 +452,9 @@ footer {
         align-items: center;
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.3s ease, visibility 0.3s;
+        transition: opacity 0.3s ease;
         visibility: hidden;
         margin-top: 0;
-        /* Asegurar contraste en modo oscuro/claro */
-        backdrop-filter: blur(10px);
     }
 
     nav#main-nav.nav-open {
