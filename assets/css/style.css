@@ -31,14 +31,14 @@ html {
 }
 
 body.dark-mode {
-    --bg: #1a1a1a;
-    --bg-rgb: 26, 26, 26;
-    --text: #e0e0e0;
-    --accent: #76c776; /* Verde más claro para mejor contraste en modo oscuro */
-    --secondary: #999999;
-    --border-line: #44475a;
-    --gray-bg: #282a36;
-    --gray-bg-rgb: 40, 42, 54;
+    --bg: #111827;           /* Azabache profundo, ideal para el fondo base */
+    --bg-rgb: 17, 24, 39;
+    --text: #F3F4F6;         /* Blanquecino suave para evitar la fatiga visual (WCAG AAA) */
+    --accent: #A3B888;       /* Tono salvia derivado del verde hoja original, vibra con elegancia */
+    --secondary: #9CA3AF;    /* Gris claro para una jerarquía secundaria perfecta (WCAG AA) */
+    --border-line: #374151;  /* Borde oscuro muy sutil para delimitar tarjetas */
+    --gray-bg: #1F2937;      /* Ligeramente más claro que el fondo para dar profundidad */
+    --gray-bg-rgb: 31, 41, 55;
 }
 
 body {
@@ -101,6 +101,18 @@ header.scrolled .header-controls {
     top: 50%;
     transform: translateY(-50%);
     right: 1.5rem;
+}
+
+/* Enlace transparente para el bloque de marca (Header) */
+.brand-link {
+    display: inline-block; /* Limita la zona de clic solo al espacio que ocupa el texto */
+    text-decoration: none;
+    cursor: pointer;
+}
+.brand-link:hover,
+.brand-link:focus,
+.brand-link:active {
+    text-decoration: none; /* Asegura que no haya subrayados (no-underline) en ningún estado */
 }
 
 h1 {

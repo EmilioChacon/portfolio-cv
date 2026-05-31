@@ -10,8 +10,10 @@
 <body>
     <main class="container">
         <header>
-            <h1>Emilio De La Peña Chacón</h1>
-            <p class="subtitle" data-i18n="subtitle">Backend Developer</p>
+            <a href="index.html" class="brand-link">
+                <h1>Emilio De La Peña Chacón</h1>
+                <p class="subtitle" data-i18n="subtitle">Backend Developer</p>
+            </a>
             <nav id="main-nav">
                 <button id="close-menu" aria-label="Close menu" data-i18n-aria="aria_close_menu">&times;</button>
                 <a href="#sobre-mi" data-i18n="nav_about">About Me</a>
@@ -146,46 +148,56 @@
 
         <!-- Sección de Habilidades -->
         <section id="habilidades">
-            <h2 data-i18n="skills_title">Skills</h2>
+            <h2 data-i18n="skills_title">Habilidades Técnicas</h2>
             
             <div class="skills-category">
-                <h3 data-i18n="skills_cat_core">Core Backend & Foundations</h3>
+                <h3 data-i18n="skills_cat_core">Core Backend (Especialidad)</h3>
                 <ul>
-                    <li data-i18n="skills_core_java"><strong>Java Standard Edition (SE):</strong> Solid foundation in programming logic and Object-Oriented Programming (OOP) acquired in DAM.</li>
-                    <li data-i18n="skills_core_persistence"><strong>Data Persistence:</strong> Handling relational databases with PostgreSQL and basic connectivity via JDBC.</li>
-                    <li data-i18n="skills_core_build"><strong>Build Tools:</strong> Fundamental knowledge of Maven for dependency management in Java projects.</li>
+                    <li data-i18n="skills_core_java_lomb"><strong>Java 21 y Spring Boot:</strong> Creación de APIs REST con arquitectura limpia, gestionando la inyección de dependencias y optimizando el código mediante Lombok.</li>
+                    <li data-i18n="skills_core_security"><strong>Seguridad y Autenticación:</strong> Implementación de capas de seguridad robustas mediante Spring Security y control de sesiones sin estado utilizando tokens JWT (Json Web Tokens).</li>
+                    <li data-i18n="skills_core_persistence_validation"><strong>Persistencia y Validación:</strong> Integración de Spring Data JPA e Hibernate para la abstracción de datos con PostgreSQL y H2, aplicando reglas estrictas de validación en los DTOs y controladores mediante Spring Boot Starter Validation.</li>
+                    <li data-i18n="skills_core_docs"><strong>Documentación y Calidad:</strong> Automatización de la documentación interactiva de la API con Springdoc OpenAPI UI (Swagger).</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3 data-i18n="skills_cat_tools">Development Tools & Infrastructure</h3>
+                <h3 data-i18n="skills_cat_fullstack">Ecosistema Moderno y Fullstack</h3>
                 <ul>
-                    <li data-i18n="skills_tools_git"><strong>Version Control:</strong> Use of Git and GitHub for version control and atomic change management.</li>
-                    <li data-i18n="skills_tools_linux"><strong>Linux Environment:</strong> Daily user of Fedora, familiar with the terminal and package management.</li>
-                    <li data-i18n="skills_tools_docker"><strong>Containerization (Learning):</strong> Starting to use Docker for local database deployment.</li>
+                    <li data-i18n="skills_fullstack_node"><strong>Arquitectura Node.js:</strong> Desarrollo backend estructurado y tipado utilizando TypeScript, NestJS y Prisma ORM.</li>
+                    <li data-i18n="skills_fullstack_frontend"><strong>Desarrollo Frontend:</strong> Creación de interfaces de usuario reactivas y componentes modulares con React, Vite y Next.js.</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3 data-i18n="skills_cat_methodologies">Methodologies</h3>
+                <h3 data-i18n="skills_cat_infra">Infraestructura y Herramientas</h3>
                 <ul>
-                    <li data-i18n="skills_methodologies_agile"><strong>Agile Basics:</strong> Understanding of Kanban boards and Scrum workflows for task organization.</li>
+                    <li data-i18n="skills_infra_docker"><strong>Contenerización con Docker:</strong> Diseño de entornos de desarrollo aislados y orquestación de arquitecturas contenerizadas (frontend, backend y bases de datos).</li>
+                    <li data-i18n="skills_infra_git"><strong>Entorno Linux y Git:</strong> Gestión avanzada de sistemas en la terminal (usuario diario de Fedora) y control de versiones con flujos de trabajo basados en ramas en GitHub.</li>
                 </ul>
             </div>
 
             <div class="skills-category">
-                <h3 data-i18n="skills_cat_ai">AI</h3>
+                <h3 data-i18n="skills_cat_methodologies">Metodologías e Inteligencia Artificial</h3>
                 <ul>
-                    <li data-i18n="skills_ai_augmented"><strong>AI-Augmented Development:</strong> Delivery time optimization using Aider, Gemini, and integrated AI assistants for error resolution and code generation.</li>
+                    <li data-i18n="skills_methodologies_agile"><strong>Gestión Ágil (Scrum):</strong> Experiencia ejerciendo como Scrum Master y Backend Lead, coordinando equipos multidisciplinares, gestionando ceremonias ágiles (Dailys) y organizando flujos de trabajo en GitHub Projects.</li>
+                    <li data-i18n="skills_methodologies_ai"><strong>Metodología SDD (Spec-Driven Development) con IA:</strong> Desarrollo guiado de forma estricta por las especificaciones iniciales, historias de usuario y contratos de la API. Este enfoque sirvió de guardarraíles técnico al trabajar con asistentes de Inteligencia Artificial, asegurando que tanto la IA como el desarrollo manual se mantuvieran fieles a los requisitos de negocio y de arquitectura planificados, permitiendo reevaluar cambios con criterio técnico.</li>
                 </ul>
             </div>
         </section>
 
         <section id="formacion">
-            <h2 data-i18n="edu_title">Education</h2>
+            <h2 data-i18n="edu_title">Formación y Certificaciones</h2>
             <div class="item">
-                <h3 data-i18n="edu_dam">Multi-platform Application Development (DAM)</h3>
-                <span data-i18n="edu_status">Completed | Spain</span>
+                <h3 data-i18n="edu_dam_title">Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                <p><span data-i18n="edu_dam_center">Digitech FP</span> | <span data-i18n="edu_dam_date">2024 – 2026</span></p>
+            </div>
+            <div class="item">
+                <h3 data-i18n="edu_degree_title">Graduado en Nutrición Humana y Dietética</h3>
+                <p><span data-i18n="edu_degree_university">Universidad de Alicante</span> | <span data-i18n="edu_degree_date">2018 – 2022</span></p>
+            </div>
+            <div class="item">
+                <h3 data-i18n="edu_cert_title">Certificación de Inglés Avanzado (C1 Advanced)</h3>
+                <p data-i18n="edu_cert_issuer">Cambridge Assessment English</p>
             </div>
         </section>
 
@@ -217,7 +229,7 @@
     <footer>
         <p data-i18n="footer_copy">&copy; 2026 Emilio De La Peña Chacón</p>
         <div class="social-links">
-            <a href="https://github.com/EmilioChacon" target="_blank" data-i18n="footer_github">GitHub</a> | 
+            <a href="https://github.com/EmilioChacon" target="_blank" data-i18n="footer_github">GitHub</a> |
             <a href="https://www.linkedin.com/in/emilio-dlp-chacon/" target="_blank" data-i18n="footer_linkedin">LinkedIn</a>
         </div>
     </footer>
