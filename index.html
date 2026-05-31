@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="meta_title">Emilio De La Peña Chacón | Backend Developer</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <main class="container">
         <header>
             <h1>Emilio De La Peña Chacón</h1>
-            <p class="subtitle" data-i18n="subtitle">Backend Developer | DAM Student</p>
+            <p class="subtitle" data-i18n="subtitle">Backend Developer</p>
             <nav id="main-nav">
                 <button id="close-menu" aria-label="Close menu" data-i18n-aria="aria_close_menu">&times;</button>
                 <a href="#sobre-mi" data-i18n="nav_about">About Me</a>
-                <a href="#proyectos" data-i18n="nav_projects">Projects</a>
+                <a href="#proyecto-destacado" data-i18n="nav_projects">Projects</a>
+                <a href="#experiencia-profesional" data-i18n="nav_experience">Experience</a>
                 <a href="#habilidades" data-i18n="nav_skills">Skills</a>
                 <a href="#formacion" data-i18n="nav_education">Education</a>
-                <a href="#contacto" data-i18n="nav_contact">Contact</a>
+                <a href="#contacto" class="cta-button" data-i18n="nav_contact">Contact</a>
             </nav>
             <div class="header-controls">
                 <button id="lang-toggle" aria-label="Switch to Spanish" data-i18n-aria="aria_lang_toggle">
-                    <span id="lang-current">EN</span>
+                    <span id="lang-current" style="font-size: 0.9rem; font-weight: 700; font-family: var(--font-code);">EN</span>
                 </button>
                 <button id="theme-toggle" aria-label="Switch to dark mode" data-i18n-aria="aria_theme_toggle_dark">
-                    <span id="theme-icon">&#9790;</span> <!-- Icono de Luna (Modo Oscuro) -->
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
                 </button>
+                <a href="#contacto" class="cta-mobile" aria-label="Contact" data-i18n-aria="aria_contact_label"><i class="fas fa-envelope"></i></a>
                 <button id="menu-toggle" aria-label="Open menu" data-i18n-aria="aria_menu_toggle">
                     <span id="menu-icon">&#9776;</span>
                 </button>
@@ -34,8 +37,9 @@
 
         <section id="sobre-mi">
             <h2 data-i18n="about_title">About Me</h2>
-            <p data-i18n="about_p1">Backend Developer focused on technical rigour and process efficiency.</p>
-            <p data-i18n="about_p2">My approach to software development can be summed up in one word: Rigour. I am not satisfied with code that simply works; I am obsessed with excellence in the final result, from the cleanliness of the internal logic to the delight of the user interacting with the service. This technical seriousness is fuelled by a constant curiosity that drives me to explore new tools and understand the "why" behind every solution.</p>
+            <p data-i18n="about_p1">I am a Backend developer based in Spain, specializing in the Java and Spring Boot ecosystem for creating robust, scalable, and efficient APIs.</p>
+            <p data-i18n="about_p2">My technical profile is based on solid projects, such as the development of a personal finance analysis platform. In this project, I apply Java 21 and Spring Boot, designing the API lifecycle with Swagger and Postman, and managing persistence with Hibernate, H2, and Docker containers for the database (PostgreSQL). Additionally, to maintain a complete product vision, I develop the client interface using React, TypeScript, and Vite.</p>
+            <p data-i18n="about_p3">This foundation is complemented by real experience working under agile methodologies. Recently, I have led the development of a social network assuming the roles of Backend Lead and Scrum Master, managing team ceremonies and orchestrating a fully containerized architecture with Docker, operating on a modern stack based on Node.js, TypeScript, NestJS, and Next.js.</p>
             
             <h3 data-i18n="about_q_title">What do I bring to the team?</h3>
             
@@ -45,33 +49,98 @@
             
             <p data-i18n="about_q_p3"><strong>Product Mindset:</strong> Thanks to my previous background, I understand that software is a tool to solve real problems. I design with maintainability and the value the end client will receive in mind.</p>
             
-            <p data-i18n="about_conclusion">Currently specialised in the Java ecosystem, I seek to contribute this combination of technical capacity and management skills in projects that value quality and scalability.</p>
+            <p data-i18n="about_conclusion">I have recently completed the Multi-platform Application Development (DAM) degree and am backed by a C1 certification in technical English with work experience in English-speaking environments. I am looking to bring architectural rigor, clean code, and a problem-solving mindset to software engineering teams.</p>
         </section>
 
-        <!-- Nueva Sección: Proyectos -->
+        <!-- Proyecto Destacado -->
+        <section id="proyecto-destacado">
+            <h2 data-i18n="featured_project_title">Proyecto Destacado</h2>
+            <div class="project-item">
+                <h3 data-i18n="featured_project_name">App web: Mi Diario Financiero</h3>
+                <p data-i18n="featured_project_desc">Herramienta limpia y segura para llevar el registro de finanzas personales y tomar mejores decisiones financieras.</p>
+                <img src="assets/img/diario-financiero-hero.png" alt="Mi Diario Financiero" style="width:100%; max-width:600px; margin: 1rem auto; display: block;">
+
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <div class="tech-pills">
+                            <span class="tech-pill">Java 21</span>
+                            <span class="tech-pill">Spring Boot</span>
+                            <span class="tech-pill">Hibernate</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-pills">
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">H2</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-pills">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">TypeScript</span>
+                            <span class="tech-pill">Vite</span>
+                        </div>
+                    </div>
+                    <div class="tech-category">
+                        <div class="tech-pills">
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">Swagger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="diariofinanciero.html" class="cta-button" style="display: inline-block; margin-top: 1rem;" data-i18n="featured_project_btn">Ver demostración</a>
+            </div>
+        </section>
+
+        <!-- Más proyectos -->
         <section id="proyectos">
-            <h2 data-i18n="projects_title">Featured Projects</h2>
+            <h2 data-i18n="projects_title_more">Más proyectos</h2>
             <div class="project-list">
                 <div class="project-item">
-                    <h3><a href="https://github.com/EmilioChacon/zookeeper" target="_blank">Zookeeper</a> (Java)</h3>
+                    <h3 data-i18n="project_zookeeper_title"><a href="https://github.com/EmilioChacon/zookeeper" target="_blank">Zookeeper</a> (Java)</h3>
                     <p data-i18n="project_zookeeper_desc">Console application simulating a zoo camera monitoring system, utilising Java text blocks to render complex ASCII art animations.</p>
                 </div>
                 <div class="project-item">
-                    <h3><a href="https://github.com/EmilioChacon/battleship-pvp-game" target="_blank">Battleship Game (PvP)</a> (Java)</h3>
+                    <h3 data-i18n="project_battleship_title"><a href="https://github.com/EmilioChacon/battleship-pvp-game" target="_blank">Battleship Game (PvP)</a> (Java)</h3>
                     <p data-i18n="project_battleship_desc">Classic command-line implementation of the Battleship game, focused on backend logic and 2D array manipulation.</p>
                 </div>
                 <div class="project-item">
-                    <h3><a href="https://github.com/EmilioChacon/aerotaxi-web" target="_blank">Aerotaxi Web Simulation</a> (Python)</h3>
+                    <h3 data-i18n="project_aerotaxi_title"><a href="https://github.com/EmilioChacon/aerotaxi-web" target="_blank">Aerotaxi Web Simulation</a> (Python)</h3>
                     <p data-i18n="project_aerotaxi_desc">Aerotaxi reservation simulation for trips within Spain in under 2 hours.</p>
                 </div>
                 <div class="project-item">
-                    <h3><a href="https://github.com/EmilioChacon/Cinema-Room-Manager" target="_blank">Cinema Room Manager</a> (Java)</h3>
+                    <h3 data-i18n="project_cinema_title"><a href="https://github.com/EmilioChacon/Cinema-Room-Manager" target="_blank">Cinema Room Manager</a> (Java)</h3>
                     <p data-i18n="project_cinema_desc">Console application to manage cinema seating arrangements, ticket purchases, and occupancy/revenue statistics.</p>
                 </div>
                 <div class="project-item">
-                    <h3><a href="https://github.com/EmilioChacon/Simple-Shop-Net-Income-Calculator" target="_blank">Shop Net Income Calculator</a> (Java)</h3>
+                    <h3 data-i18n="project_shop_title"><a href="https://github.com/EmilioChacon/Simple-Shop-Net-Income-Calculator" target="_blank">Shop Net Income Calculator</a> (Java)</h3>
                     <p data-i18n="project_shop_desc">Simple console application to track shop earnings, record expenses, and calculate net income.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="experiencia-profesional">
+            <h2 data-i18n="experience_title">Experiencia Profesional</h2>
+            <div class="item">
+                <h3 data-i18n="exp_role">Backend & Scrum Master</h3>
+                <p data-i18n="exp_company"><strong>Alicante Futura Lab (Prácticas)</strong> | 02/03/26 al 01/06/26</p>
+                <p data-i18n="exp_desc">Desarrollo de arquitectura backend y coordinación de equipo ágil, con apoyo en el desarrollo frontend.</p>
+                <p data-i18n="exp_stack"><strong>Stack:</strong> Node.js, TypeScript, NestJS, PostgreSQL, Supabase, Prisma, React, Vite, Docker.</p>
+
+                <h4 data-i18n="exp_achievements_title">Logros Técnicos</h4>
+                <ul>
+                    <li data-i18n="exp_achievements_1">Diseño e implementación de un sistema de gestión de contenedores Docker orquestado directamente desde el backend utilizando Dockerode.</li>
+                    <li data-i18n="exp_achievements_2">Establecimiento de una cultura de desarrollo Review-First e integración de flujos de trabajo AI-Driven, asegurando auditoría humana estricta y gestión de ramas por tareas en GitHub Projects.</li>
+                    <li data-i18n="exp_achievements_3">Refactorización del sistema de internacionalización (i18n): Escalado del proyecto de 1 a 4 idiomas (Inglés, Español, Francés e Italiano) gestionando la lógica tanto en frontend como en backend con i18next.</li>
+                </ul>
+
+                <h4 data-i18n="exp_leadership_title">Liderazgo y Gestión Ágil</h4>
+                <ul>
+                    <li data-i18n="exp_leadership_1">Liderazgo de un equipo multidisciplinar de 5 desarrolladores aplicando el marco de trabajo Scrum.</li>
+                    <li data-i18n="exp_leadership_2">Gestión del cambio y pivotaje estratégico: Recálculo de ruta técnica durante un cambio de alcance a mitad del desarrollo, manteniendo el alineamiento del equipo y la velocidad de entrega.</li>
+                    <li data-i18n="exp_leadership_3">Pitching corporativo: Estructuración de la narrativa técnica frente a stakeholders e inversores, traduciendo decisiones de arquitectura complejas en valor de negocio.</li>
+                </ul>
             </div>
         </section>
 
@@ -116,7 +185,7 @@
             <h2 data-i18n="edu_title">Education</h2>
             <div class="item">
                 <h3 data-i18n="edu_dam">Multi-platform Application Development (DAM)</h3>
-                <span data-i18n="edu_status">In progress | Spain</span>
+                <span data-i18n="edu_status">Completed | Spain</span>
             </div>
         </section>
 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="df_demo_title">Mi Diario Financiero - Demostración</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Emilio De La Peña Chacón</h1>
+            <p class="subtitle" data-i18n="subtitle">Backend Developer</p>
+            <nav id="main-nav">
+                <button id="close-menu" aria-label="Close menu" data-i18n-aria="aria_close_menu">&times;</button>
+                <a href="#origen" data-i18n="nav_origin">Origen</a>
+                <a href="#diseño" data-i18n="nav_design">Diseño</a>
+                <a href="#stack" data-i18n="nav_stack">Stack</a>
+                <a href="index.html" data-i18n="nav_back_home">Volver al inicio</a>
+                <a href="#contacto" class="cta-button" style="display: inline-block; margin-top: 1rem;" data-i18n="nav_contact">Contacto</a>
+            </nav>
+            <div class="header-controls">
+                <button id="lang-toggle" aria-label="Switch to Spanish" data-i18n-aria="aria_lang_toggle">
+                    <span id="lang-current" style="font-size: 0.9rem; font-weight: 700; font-family: var(--font-code);">EN</span>
+                </button>
+                <button id="theme-toggle" aria-label="Switch to dark mode" data-i18n-aria="aria_theme_toggle_dark">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                </button>
+                <a href="#contacto" class="cta-mobile" aria-label="Contact" data-i18n-aria="aria_contact_label"><i class="fas fa-envelope"></i></a>
+                <button id="menu-toggle" aria-label="Open menu" data-i18n-aria="aria_menu_toggle">
+                    <span id="menu-icon">&#9776;</span>
+                </button>
+            </div>
+        </header>
+
+        <section>
+            <h1 style="text-align: left; margin-bottom: 1rem;" data-i18n="df_title">App web: Mi Diario Financiero</h1>
+            <div class="video-container" style="max-width: 800px; margin: 0 auto 2rem auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <iframe width="100%" height="450" src="https://www.youtube.com/embed/AM_FFu9dAJQ" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>
+            </div>
+        </section>
+
+        <section id="origen">
+            <h2 data-i18n="df_origin_title">El Origen: De Google Sheets a Arquitectura de Software</h2>
+            <p data-i18n="df_origin_p1">
+                Durante años, he perfeccionado un sistema de finanzas personas en una simple hoja de cálculo. Cada semana, en 5 minutos, vuelco mis gastos e ingresos para tener una foto clara de mi salud financiera. Este hábito no solo me dio disciplina, sino que me permitió identificar patrones, optimizar ahorros y, en definitiva, tomar mejores decisiones.
+            </p>
+            <p data-i18n="df_origin_p2">
+                Al finalizar mis estudios de Desarrollo de Aplicaciones Multiplataforma, decidí transformar esta hoja de cálculo en una aplicación web completa, poniendo en práctica las tecnologías que he ido aprendiendo en el ciclo y otras nuevas que he querido aprender.
+            </p>
+            <p data-i18n="df_origin_p3">
+                La migración de este sistema a una aplicación web no solo fue un ejercicio académico, para mi fue un entrenamiento real de creación de un producto real.
+            </p>
+        </section>
+
+        <section id="diseño">
+            <h2 data-i18n="df_design_title">Documento de Diseño (SDD) y Desarrollo Eficiente</h2>
+            <p data-i18n="df_design_p1">
+                Antes de escribir una sola línea de código, invertí tiempo en redactar un Documento de Diseño de Software (SDD). Este documento no solo definía las entidades, los endpoints de la API y el esquema de la base de datos, sino que establecía los "guardarraíles" técnicos del proyecto. Al trabajar con asistentes de IA, este SDD se convirtió en el "contrato" que garantizaba que la IA generase código alineado con la arquitectura predefinida. La IA era un copiloto, pero el mapa y el destino estaban fijados por el diseño de ingeniería.
+            </p>
+        </section>
+
+        <section id="stack">
+            <h2 data-i18n="df_stack_title">Desglose del Stack Arquitectónico</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-i18n="df_stack_th_layer">Capa / Componente</th>
+                        <th data-i18n="df_stack_th_tech">Tecnologías Utilizadas</th>
+                        <th data-i18n="df_stack_th_purpose">Propósito Técnico</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-i18n="df_stack_core"><strong>Core Backend</strong></td>
+                        <td>Java 21, Spring Boot</td>
+                        <td data-i18n="df_stack_core_desc">Lógica de negocio, controladores y API REST.</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="df_stack_persistence"><strong>Persistencia</strong></td>
+                        <td>PostgreSQL, Hibernate, H2</td>
+                        <td data-i18n="df_stack_persistence_desc">Base de datos relacional y mapeo de entidades.</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="df_stack_infra"><strong>Infraestructura</strong></td>
+                        <td>Docker</td>
+                        <td data-i18n="df_stack_infra_desc">Contenerización y aislamiento de la base de datos.</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="df_stack_docs"><strong>Documentación</strong></td>
+                        <td>Swagger</td>
+                        <td data-i18n="df_stack_docs_desc">Diseño, contratos de la API y pruebas de endpoints.</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="df_stack_frontend"><strong>Frontend</strong></td>
+                        <td>React, TypeScript, Vite</td>
+                        <td data-i18n="df_stack_frontend_desc">Interfaz de cliente reactiva y consumo de endpoints.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contacto">
+            <h2 data-i18n="contact_title">Contact</h2>
+            <form name="contacto" method="POST" action="gracias.html" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contacto">
+                <p hidden>
+                    <label>If you are human, leave this field empty: <input name="bot-field" /></label>
+                </p>
+
+                <label for="nombre" data-i18n="contact_name_label">Full Name</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email" data-i18n="contact_email_label">Contact Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="empresa" data-i18n="contact_company_label">Company (Optional)</label>
+                <input type="text" id="empresa" name="empresa">
+
+                <label for="mensaje" data-i18n="contact_message_label">Message</label>
+                <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+
+                <button type="submit" class="btn" data-i18n="btn_send">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer_copy">&copy; 2026 Emilio De La Peña Chacón</p>
+        <div class="social-links">
+            <a href="https://github.com/EmilioChacon" target="_blank" data-i18n="footer_github">GitHub</a> |
+            <a href="https://www.linkedin.com/in/emilio-dlp-chacon/" target="_blank" data-i18n="footer_linkedin">LinkedIn</a>
+        </div>
+    </footer>
+    <script src="assets/js/lang.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>

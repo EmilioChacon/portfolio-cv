@@ -22,7 +22,7 @@ const ThemeStrategies = {
          */
         apply(elements) {
             elements.body.classList.add('dark-mode');
-            elements.icon.innerHTML = '&#9728;'; // Sun Icon
+            elements.icon.innerHTML = '<i class="fas fa-sun"></i>'; // Sun Icon
             elements.toggle.setAttribute('aria-label', 'Switch to light mode');
         }
     },
@@ -33,7 +33,7 @@ const ThemeStrategies = {
          */
         apply(elements) {
             elements.body.classList.remove('dark-mode');
-            elements.icon.innerHTML = '&#9790;'; // Moon Icon
+            elements.icon.innerHTML = '<i class="fas fa-moon"></i>'; // Moon Icon
             elements.toggle.setAttribute('aria-label', 'Switch to dark mode');
         }
     }

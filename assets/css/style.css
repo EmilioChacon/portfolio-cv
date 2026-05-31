@@ -10,14 +10,14 @@
  */
 :root {
     /* Colores (Minimalista - Light Mode Default) */
-    --bg: #f7f7f7;           /* Fondo claro minimalista */
-    --bg-rgb: 247, 247, 247;
-    --text: #333333;         /* Texto oscuro */
-    --accent: #4a864a;       /* Verde hoja oscuro (Distintivo) */
+    --bg: #ffffff;           /* Fondo claro minimalista */
+    --bg-rgb: 255, 255, 255;
+    --text: #262626;         /* Texto oscuro */
+    --accent: #4F5940;       /* Verde hoja oscuro (Distintivo) */
     --secondary: #666666;    /* Gris medio para subtítulos */
     --border-line: #dddddd;  /* Líneas y bordes sutiles */
-    --gray-bg: #ffffff;      /* Fondo de bloques y tags (blanco puro) */
-    --gray-bg-rgb: 255, 255, 255;
+    --gray-bg: #f7f7f7;      /* Fondo de bloques y tags (blanco puro) */
+    --gray-bg-rgb: 247, 247, 247;
 
     /* Tipografía */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -103,9 +103,9 @@ header.scrolled .header-controls {
     right: 1.5rem;
 }
 
-h1 { 
-    font-size: 2.8rem; 
-    margin-bottom: 0.2rem; 
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
     color: var(--accent);
     letter-spacing: -0.04em;
 }
@@ -114,6 +114,7 @@ h1 {
     color: var(--secondary);
     font-weight: 500;
     margin-top: 0;
+    font-size: 1.1rem;
 }
 
 nav { margin-top: 1.5rem; }
@@ -139,7 +140,7 @@ a:hover {
     text-decoration: underline;
 }
 
-h2 { 
+h2 {
     font-size: 1.4rem; 
     color: var(--accent);
     border-bottom: 1px solid var(--border-line); 
@@ -235,6 +236,32 @@ h2 {
     margin-bottom: 0;
 }
 
+/* Tech Stack Pills for Featured Project */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-pill {
+    background: var(--bg);
+    color: var(--secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-family: var(--font-code);
+    border: 1px solid var(--border-line);
+    white-space: nowrap;
+}
+
 
 /* Estilos antiguos de skills que ya no se usan directamente, pero se mantienen por si acaso */
 /* .skills span {
@@ -302,11 +329,11 @@ input:focus, textarea:focus {
 }
 
 /* Theme Toggle, Menu Button & Language Toggle Style */
-#theme-toggle, #menu-toggle, #lang-toggle {
+#theme-toggle, #menu-toggle, #lang-toggle, .cta-mobile {
     position: static; /* Positioned by flex container */
-    background: none;
+    background: var(--gray-bg);
     border: 1px solid var(--border-line); /* Añadir un borde sutil */
-    color: var(--secondary); 
+    color: var(--secondary);
     width: 40px; /* Tamaño fijo */
     height: 40px; /* Tamaño fijo */
     display: flex;
@@ -316,15 +343,21 @@ input:focus, textarea:focus {
     cursor: pointer;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
     padding: 0;
+    text-decoration: none;
 }
 
-#theme-toggle:hover, #menu-toggle:hover, #lang-toggle:hover {
+#theme-toggle:hover, #menu-toggle:hover, #lang-toggle:hover, .cta-mobile:hover {
     background: var(--border-line);
     color: var(--accent);
     border-color: var(--accent);
 }
 
 #menu-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.2rem;
+}
+
+.cta-mobile {
     display: none; /* Hidden on desktop */
     font-size: 1.2rem;
 }
@@ -339,10 +372,24 @@ input:focus, textarea:focus {
 }
 
 #lang-current {
-    font-size: 0.9rem; /* Un poco más pequeño para texto */
-    font-weight: 700;
-    font-family: var(--font-code);
+    font-size: 1.2rem; /* Un poco más pequeño para texto */
 }
+
+/* CTA Button for Desktop */
+.cta-button {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.cta-button:hover {
+    filter: brightness(1.1);
+    color: white;
+    border-bottom: none;
+}
+
 
 /* Footer (Nuevo elemento semántico) */
 footer {
@@ -365,6 +412,35 @@ footer {
     color: var(--accent);
 }
 
+/* --- Table Styles --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+th, td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-line);
+}
+
+th {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+td {
+    color: var(--secondary);
+}
+
+td strong {
+    color: var(--text);
+}
+
+
 /* --- Mobile Optimization --- */
 @media (max-width: 600px) {
     html {
@@ -374,7 +450,7 @@ footer {
     body {
         padding: 1rem;
     }
-    
+
     header {
         /* Layout de columna para móvil */
         display: flex;
@@ -383,18 +459,20 @@ footer {
         text-align: center;
         width: 100%;
         box-sizing: border-box;
+        margin-bottom: 1.5rem; /* Reducir el margen inferior del header */
     }
 
     header.scrolled {
         width: calc(100% + 2rem);
         margin-left: -1rem;
         margin-right: -1rem;
-        padding: 1rem 1.5rem; /* Aumentar padding vertical en modo scrolled */
+        padding: 1rem 1.5rem; /* Padding vertical en modo scrolled */
+        margin-bottom: 1.5rem;
     }
 
     header.scrolled h1 {
-        font-size: 1.2rem;
-        margin-bottom: 0.25rem; /* Espacio entre título y subtítulo en modo scrolled */
+        font-size: 1.3rem; /* Un poco más grande para que no se vea tan apelotonado */
+        margin-bottom: 0.4rem; /* Más espacio entre título y subtítulo en modo scrolled */
     }
 
     /* En móvil, el subtítulo no desaparece al hacer scroll */
@@ -402,7 +480,7 @@ footer {
         display: block;
         opacity: 1;
         pointer-events: auto;
-        font-size: 0.8rem; /* Un poco más pequeño en modo scrolled */
+        font-size: 0.9rem; /* Un poco más pequeño en modo scrolled */
     }
 
     /* Ocultar la navegación principal en modo scrolled móvil, ya que está el menú hamburguesa */
@@ -411,29 +489,42 @@ footer {
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         max-width: 100%;
-        margin-bottom: 0.5rem; /* Más espacio entre título y subtítulo */
+        margin-bottom: 0.2rem; /* Reducir espacio entre título y subtítulo */
     }
-    
+
     .subtitle {
-        font-size: 0.9rem;
+        font-size: 1rem;
         max-width: 100%;
     }
 
     /* Reposicionar los controles en el flujo normal */
     .header-controls {
         position: static;
-        margin-top: 1.5rem; /* Más espacio entre subtítulo y botones */
+        margin-top: 0.8rem; /* Reducir el espacio entre subtítulo y botones */
     }
-    
+
+    /* Dar más espacio a los botones cuando el header hace scroll para que no se amontone */
+    header.scrolled .header-controls {
+        margin-top: 1rem;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     }
-    
+
     /* Mobile Menu Styles */
     #menu-toggle {
         display: flex;
+    }
+
+    .cta-mobile {
+        display: flex;
+    }
+
+    .cta-button {
+        display: none;
     }
 
     nav#main-nav {
@@ -481,5 +572,12 @@ footer {
         cursor: pointer;
         padding: 0.5rem;
         line-height: 1;
+    }
+
+    /* Hacer la tabla responsive */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }

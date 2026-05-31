@@ -112,6 +112,7 @@ class I18nManager {
      */
     updateToggleState() {
         if (this.elements.indicator) {
+            // Using clear text is the most browser-agnostic and unambiguous method
             this.elements.indicator.textContent = this.currentLocale === 'en-GB' ? 'EN' : 'ES';
         }
         if (this.elements.toggle) {
